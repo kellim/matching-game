@@ -4,72 +4,72 @@ var ducks = [
   {
     'id': 1,
     'name': 'American Black Duck',
-    'image': 'img/black_duck150x150.jpg',
+    'image': 'img/black_duck150x150.jpg'
   },
   {
     'id': 2,
     'name': 'Blue-winged Teal',
-    'image': 'img/bluewinged_teal150x150.jpg',
+    'image': 'img/bluewinged_teal150x150.jpg'
   },
   {
     'id': 3,
     'name': 'Bufflehead',
-    'image': 'img/bufflehead_drake-150x150.jpg',
+    'image': 'img/bufflehead_drake-150x150.jpg'
   },
   {
     'id': 4,
     'name': 'Canvasback',
-    'image': 'img/canvasback150x150.jpg',
+    'image': 'img/canvasback150x150.jpg'
   },
   {
     'id': 5,
     'name': 'Cinnamon Teal',
-    'image': 'img/cinnamon_teal150x150.jpg',
+    'image': 'img/cinnamon_teal150x150.jpg'
   },
   {
     'id': 6,
     'name': 'Fulvous Whistling Duck' ,
-    'image': 'img/fulvous_whistling_duck150x150.jpg',
+    'image': 'img/fulvous_whistling_duck150x150.jpg'
   },
   {
     'id': 7,
     'name': 'Harlequin Duck',
-    'image': 'img/harlequin_duck150x150.jpg',
+    'image': 'img/harlequin_duck150x150.jpg'
   },
   {
     'id': 8,
     'name': 'Laysan Duck',
-    'image': 'img/laysan_ducks150x150.jpg',
+    'image': 'img/laysan_ducks150x150.jpg'
   },
   {
     'id': 9,
     'name': 'Northern Pintail',
-    'image': 'img/northern_pintail_duck150x150.jpg',
+    'image': 'img/northern_pintail_duck150x150.jpg'
   },
   {
     'id': 10,
     'name': 'Northern Shoveler',
-    'image': 'img/northern_shoveler150x150.jpg',
+    'image': 'img/northern_shoveler150x150.jpg'
   },
   {
     'id': 11,
     'name': 'Red-breasted Merganser',
-    'image': 'img/redbreasted_merganser150x150.jpg',
+    'image': 'img/redbreasted_merganser150x150.jpg'
   },
   {
     'id': 12,
     'name': 'Tufted Duck',
-    'image': 'img/tufted_duck150x150.jpg',
+    'image': 'img/tufted_duck150x150.jpg'
   },
   {
     'id': 13,
     'name': 'Black-bellied Whistling Duck',
-    'image': 'img/wading_blackbellied_whistling_duck150x150.jpg',
+    'image': 'img/wading_blackbellied_whistling_duck150x150.jpg'
   },
   {
     'id': 14,
     'name': 'Wood Duck' ,
-    'image': 'img/wood_duck2_150x150.jpg',
+    'image': 'img/wood_duck2_150x150.jpg'
   }
 ]
 
@@ -77,6 +77,7 @@ var Tile = function(data) {
   this.id = data.id;
   this.name = ko.observable(data.name);
   this.image = ko.observable(data.image);
+  this.imageVisible = ko.observable(false);
 }
 
 var ViewModel = function() {
