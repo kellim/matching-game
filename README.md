@@ -2,7 +2,7 @@
 Responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout
 
 # Tasks To Do
-- Add backs for tiles and display backs of tiles initially
+- <del>Add backs for tiles and display backs of tiles initially</del>
 - Start a new turn
   - Let player pick first tile
   - Display image of tile picked in place of back of tile
