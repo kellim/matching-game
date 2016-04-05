@@ -4,21 +4,21 @@ Responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout
 # Tasks To Do
 - <del>Add backs for tiles and display backs of tiles initially</del>
 - Start a new turn
-  - Let player pick first tile
-  - Display image of tile picked in place of back of tile
+  - <del>Let player pick first tile</del>
+  - <del>Display image of tile picked in place of back of tile</del>
   - Write name of first tile picked to screen
-  - Let player pick second tile
-  - Display image of second tile picked in place of back of tile
+  - <del>Let player pick second tile</del>
+  - <del>Display image of second tile picked in place of back of tile</del>
   - Write name of second tile picked to screen
-- Compare first and second tiles picked to see if they match
-  - If no match found
-    - Indicate no match found
-    - Turn cards back over by showing back of tile instead of tile image
-    - Let player start a new turn
-- If match found
-    - Indicate match found
-    - Do not display tiles or backs of tiles at location where match was found
-    - Let player start a new turn   
+- <del>Compare first and second tiles picked to see if they match</del>
+  - <del>If no match found</del>
+    - <del>Indicate no match found</del>
+    - <del>Turn cards back over by showing back of tile instead of tile image</del>
+    - <del>Let player start a new turn</del>
+- <del>If match found</del>
+    - <del>Indicate match found</del>
+    - <del>Do not display tiles or backs of tiles at location where match was found</del>
+    - <del>Let player start a new turn</del>   
 - Display 'Number of Matches Found' on screen (or matches left to find?)
 - End Game when all Matches found
   - Display a congratulatory message when game has been won
