@@ -77,13 +77,21 @@ var Tile = function(data) {
   this.id = data.id;
   this.name = ko.observable(data.name);
   this.image = ko.observable(data.image);
+  this.matched = ko.observable(false);
   this.imageVisible = ko.observable(false);
 }
 
 var ViewModel = function() {
   var self = this;
+  // Array to hold tile objects
   this.tileList = ko.observableArray([]);
+  // The amount of tiles (not including their matching tile)
+  // that can be used in each game.
   this.NUM_TILES = 8;
+
+  // Hold the two tiles the player picks each turn
+  this.pickedTile1 = ko.observable();
+  this.pickedTile2 = ko.observable();
 
   // Instantiate tiles. When calling, pass the name of the
   // JSON object containing the tiles to use.
@@ -117,6 +125,66 @@ var ViewModel = function() {
   // you plan the game with each time can vary.
   this.removeExtraTiles = function() {
     self.tileList.splice(self.NUM_TILES);
+  }
+
+  this.toggleVisibility = function(tile) {
+    tile.imageVisible(!tile.imageVisible());
+  }
+
+  // This function is called when the player clicks on a tile. It determines
+  // if the player is selecting the first or second tile. At the appropriate time,
+  // it sets the first and second tiles, displays the images,  and runs a function
+  // depending on if the tiles match or not.
+  this.pickTile = function(tile) {
+    if(typeof self.pickedTile1() === 'undefined') {
+      self.pickedTile1(tile);
+      self.toggleVisibility(self.pickedTile1());
+      console.log('pickedTile1: ' + tile.id);
+    } else if (tile !== self.pickedTile1() && typeof self.pickedTile2() === 'undefined') {
+        self.pickedTile2(tile);
+        self.toggleVisibility(self.pickedTile2());
+        console.log('pickedTile2: ' + tile.id);
+        if (self.pickedTile1().id === self.pickedTile2().id) {
+          console.log('ids match: ' + self.pickedTile1().id, self.pickedTile2().id);
+          self.matchFound();
+        } else {
+          console.log('ids do not match: ' + self.pickedTile1().id, self.pickedTile2().id)
+          self.noMatchFound();
+        }
+    } else {
+      console.log('Invalid tile selection');
+    }
+    // console.log('pickTile' + tile);
+    console.log('result: ' + self.pickedTile1(), self.pickedTile2());
+  }
+
+  this.matchFound = function() {
+    console.log('match found');
+    self.pickedTile1().matched(true);
+    self.pickedTile2().matched(true);
+    setTimeout(function(){
+      self.toggleVisibility(self.pickedTile1());
+      self.toggleVisibility(self.pickedTile2());
+      self.initializeTurn();
+    }, 1500);
+
+  }
+
+  // If player selected two tiles and they do not match,
+  // turn the tiles back over after a couple seconds.
+  this.noMatchFound = function() {
+    console.log('no match found');
+    setTimeout(function(){
+      self.toggleVisibility(self.pickedTile1());
+      self.toggleVisibility(self.pickedTile2());
+      self.initializeTurn();
+    }, 2000);
+
+  }
+
+  this.initializeTurn = function() {
+    self.pickedTile1 = ko.observable();
+    self.pickedTile2 = ko.observable();
   }
 
   // Initialize Game. First, instantiate tiles, then

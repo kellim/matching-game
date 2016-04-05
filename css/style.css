@@ -6,10 +6,17 @@
 
 .tile {
   padding: 1.3em 0;
+  height: 200px;
 }
 
 /* Prevent elements hidden by Knockout from flashing on page load */
 /* You also need to do a data-bind to the element- css: { hidden: false } */
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .tile {
+    height: 135px;
+  }
 }
