@@ -3,13 +3,13 @@ Responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout
 
 # Tasks To Do
 - <del>Add backs for tiles and display backs of tiles initially</del>
-- Start a new turn
+- <del>Start a new turn</del>
   - <del>Let player pick first tile</del>
   - <del>Display image of tile picked in place of back of tile</del>
-  - Write name of first tile picked to screen
+  - <del>Write name of first tile picked to screen</del>
   - <del>Let player pick second tile</del>
   - <del>Display image of second tile picked in place of back of tile</del>
-  - Write name of second tile picked to screen
+  - <del>Write name of second tile picked to screen</del>
 - <del>Compare first and second tiles picked to see if they match</del>
   - <del>If no match found</del>
     - <del>Indicate no match found</del>
