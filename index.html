@@ -13,6 +13,18 @@
   </head>
   <body>
     <div class="container">
+      <div class="row">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6 picked-names">
+        <span class="picked-tiles">PICKED TILES:</span>
+          <div class="hidden" data-bind="if: pickedTile1, css: { hidden: false }">
+            <span data-bind="visible: pickedTile1, text: pickedTile1().name"></span>
+          </div>
+          <div class="hidden" data-bind="if: pickedTile2, css: { hidden: false }">
+            <span data-bind="visible: pickedTile2, text: pickedTile2().name"></span>
+          </div>
+        </div>
+      </div>
       <div class="row" data-bind="template: { name: 'tile-template', foreach: tileList().slice(0, 4) }">
       </div>
       <div class="row" data-bind="template: { name: 'tile-template', foreach: tileList().slice(4, 8) }">

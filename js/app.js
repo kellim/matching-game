@@ -85,6 +85,7 @@ var ViewModel = function() {
   var self = this;
   // Array to hold tile objects
   this.tileList = ko.observableArray([]);
+
   // The amount of tiles (not including their matching tile)
   // that can be used in each game.
   this.NUM_TILES = 8;
@@ -97,7 +98,7 @@ var ViewModel = function() {
   // JSON object containing the tiles to use.
   this.addTiles = function(tiles) {
     tiles.forEach(function(tileItem) {
-        self.tileList.push(new Tile(tileItem));
+      self.tileList.push(new Tile(tileItem));
     });
 }
 
@@ -105,15 +106,15 @@ var ViewModel = function() {
   // in a game.
   this.addMatchingTiles = function(tiles) {
     var validTileIds = _.pluck(self.tileList(), 'id');
-        console.log(validTileIds);
-      tiles.forEach(function(tileItem) {
-        if (_.contains((validTileIds), tileItem.id)) {
-          self.tileList.push(new Tile(tileItem));
-        }
-      });
+    console.log(validTileIds);
+    tiles.forEach(function(tileItem) {
+      if (_.contains((validTileIds), tileItem.id)) {
+        self.tileList.push(new Tile(tileItem));
+      }
+    });
   }
 
-  // Snuffle tiles in tileList array
+  // Shuffle tiles in tileList array
   this.shuffleTiles = function() {
    self.tileList(_.shuffle(self.tileList()));
   }
@@ -127,6 +128,7 @@ var ViewModel = function() {
     self.tileList.splice(self.NUM_TILES);
   }
 
+  // Toggles tile visibility
   this.toggleVisibility = function(tile) {
     tile.imageVisible(!tile.imageVisible());
   }
@@ -136,7 +138,7 @@ var ViewModel = function() {
   // it sets the first and second tiles, displays the images,  and runs a function
   // depending on if the tiles match or not.
   this.pickTile = function(tile) {
-    if(typeof self.pickedTile1() === 'undefined') {
+     if(typeof self.pickedTile1() === 'undefined') {
       self.pickedTile1(tile);
       self.toggleVisibility(self.pickedTile1());
       console.log('pickedTile1: ' + tile.id);
@@ -158,6 +160,9 @@ var ViewModel = function() {
     console.log('result: ' + self.pickedTile1(), self.pickedTile2());
   }
 
+  // This function is called by pickTile() if player selected two matching tiles.
+  // It shows the tiles for 1.5 seconds and the turn is over. It calls initializeTurn()
+  // to start the next turn.
   this.matchFound = function() {
     console.log('match found');
     self.pickedTile1().matched(true);
@@ -170,28 +175,27 @@ var ViewModel = function() {
 
   }
 
-  // If player selected two tiles and they do not match,
-  // turn the tiles back over after a couple seconds.
+  // This function is called by pickTile() if player selected two tiles that do not match.
+  // The tiles will be visible for 2 seconds and then "turned over" which hides the image.
   this.noMatchFound = function() {
     console.log('no match found');
     setTimeout(function(){
       self.toggleVisibility(self.pickedTile1());
       self.toggleVisibility(self.pickedTile2());
       self.initializeTurn();
-    }, 2000);
+    }, 2200);
 
   }
 
+  // Called by matchFound() or noMatchFound() to reset variables for the next turn.
   this.initializeTurn = function() {
-    self.pickedTile1 = ko.observable();
-    self.pickedTile2 = ko.observable();
+    self.pickedTile1(undefined);
+    self.pickedTile2(undefined);
   }
 
-  // Initialize Game. First, instantiate tiles, then
-  // shuffle tiles before removing extra tiles if there
-  // are more tiles intantiated  than self.NUM_TILES.
-  // Add matching tiles for the tiles to be used, then
-  // shuffle the tiles again.
+  // Initialize Game. First, instantiate tiles, then shuffle tiles before removing extra
+  // tiles if the are more tiles intantiated than self.NUM_TILES. Add matching tiles for
+  // the tiles to be used, then shuffle the tiles again.
   this.initializeGame = function() {
     self.addTiles(ducks);
     self.shuffleTiles();
