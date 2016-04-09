@@ -90,6 +90,9 @@ var ViewModel = function() {
   // that can be used in each game.
   this.NUM_TILES = 8;
 
+  // The amount of matches left to find
+  this.matchesLeft = ko.observable(this.NUM_TILES);
+
   // Hold the two tiles the player picks each turn
   this.pickedTile1 = ko.observable();
   this.pickedTile2 = ko.observable();
@@ -167,6 +170,8 @@ var ViewModel = function() {
     console.log('match found');
     self.pickedTile1().matched(true);
     self.pickedTile2().matched(true);
+    self.matchesLeft(self.matchesLeft() - 1);
+    console.log(self.matchesLeft());
     setTimeout(function(){
       self.toggleVisibility(self.pickedTile1());
       self.toggleVisibility(self.pickedTile2());

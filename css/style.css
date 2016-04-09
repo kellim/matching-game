@@ -18,6 +18,10 @@
   text-align: right;
 }
 
+.matches-left {
+  font-weight: bold;
+}
+
 
 /* Prevent elements hidden by Knockout from flashing on page load */
 /* You also need to do a data-bind to the element- css: { hidden: false } */

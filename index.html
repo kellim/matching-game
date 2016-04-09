@@ -14,7 +14,9 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-xs-6"></div>
+        <div class="col-xs-6 matches-left">
+            MATCHES LEFT: <span data-bind="text: matchesLeft"></span>
+        </div>
         <div class="col-xs-6 picked-names">
         <span class="picked-tiles">PICKED TILES:</span>
           <div class="hidden" data-bind="if: pickedTile1, css: { hidden: false }">
