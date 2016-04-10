@@ -22,6 +22,11 @@
   font-weight: bold;
 }
 
+.won {
+  font-size: 2em;
+  color: green;
+}
+
 
 /* Prevent elements hidden by Knockout from flashing on page load */
 /* You also need to do a data-bind to the element- css: { hidden: false } */

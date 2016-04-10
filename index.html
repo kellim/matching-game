@@ -16,6 +16,9 @@
       <div class="row">
         <div class="col-xs-6 matches-left">
             MATCHES LEFT: <span data-bind="text: matchesLeft"></span>
+            <div class="won" data-bind="visible: matchesLeft() === 0">
+            YOU WON!
+            </div>
         </div>
         <div class="col-xs-6 picked-names">
         <span class="picked-tiles">PICKED TILES:</span>
