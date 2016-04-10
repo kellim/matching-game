@@ -21,7 +21,7 @@ Responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout
     - <del>Let player start a new turn</del>   
 - <del>Display 'Number of Matches Found' on screen (or matches left to find?)</del>
 - End Game when all Matches found
-  - Display a congratulatory message when game has been won
+  - <del>Display a congratulatory message when game has been won</del>
   - Invite user to play a new game
     - If player chooses to play new game, initiate the game so it starts over
 - Add header with title to page
