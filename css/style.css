@@ -1,4 +1,6 @@
-
+img {
+  border-radius: 10px;
+}
 
 .container {
   max-width: 768px;
@@ -36,6 +38,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border: 5px solid green;
+  border-radius: 10px;
   padding: .25em;
 }
 
@@ -44,6 +47,7 @@
   text-transform: uppercase;
   letter-spacing: 2.5px;
 }
+
 /* Prevent elements hidden by Knockout from flashing on page load */
 /* You also need to do a data-bind to the element- css: { hidden: false } */
 .hidden {
