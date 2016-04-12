@@ -211,6 +211,13 @@ var ViewModel = function() {
     self.shuffleTiles();
     console.log(self.tileList().length, self.tileList());
   }
+  // Reset the game. Called when player clicks the "Play Again" button.
+  this.playAgain = function() {
+    self.matchesLeft(self.NUM_TILES);
+    self.tileList.removeAll()
+    self.initializeGame();
+    self.initializeTurn();
+  }
 
   self.initializeGame();
 }

@@ -39,7 +39,7 @@
 
     <div class="game-over" data-bind="visible: matchesLeft() === 0">
       <p>You Won!</p>
-      <button class="btn btn-lg btn-success btn-play-again">Play Again</button>
+      <button class="btn btn-lg btn-success btn-play-again"  data-bind="click: playAgain">Play Again</button>
     </div>
 
     <script type="text/html" id="tile-template">
