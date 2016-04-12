@@ -22,12 +22,28 @@
   font-weight: bold;
 }
 
-.won {
-  font-size: 2em;
+.game-over {
+  font-size: 3em;
   color: green;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  /* Transforms are used to help with centering */
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 5px solid green;
+  padding: .25em;
 }
 
-
+.btn-play-again {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
 /* Prevent elements hidden by Knockout from flashing on page load */
 /* You also need to do a data-bind to the element- css: { hidden: false } */
 .hidden {
@@ -37,5 +53,9 @@
 @media screen and (max-width: 480px) {
   .tile {
     height: 135px;
+  }
+
+  .game-over {
+    font-size: 1.5em;
   }
 }
