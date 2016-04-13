@@ -43,18 +43,18 @@
 /* Game Over Window */
 .game-over {
   font-size: 3em;
-  color: green;
+  color: #1e73b1;
   position: fixed;
   text-align: center;
   z-index: 1;
-  background-color: white;
+  background-color: #ededed;
   top: 50%;
   left: 50%;
   /* Transforms are used to help with centering */
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border: 5px solid green;
+  border: 5px solid #1e73b1;
   border-radius: 10px;
   padding: .25em;
 }
