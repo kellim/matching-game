@@ -20,16 +20,16 @@
       </div>
       <div class="row stats">
         <div class="col-xs-6">
-          <div>MATCHES LEFT: <span data-bind="text: matchesLeft"></span></div>
-          <div>TURNS TAKEN: <span data-bind="text: turnsTaken"></span></div>
+          <div>Matches Left: <span class="matches-left" data-bind="text: matchesLeft"></span></div>
+          <div class="turns-label">Turns Taken: <span class="turns-taken" data-bind="text: turnsTaken"></span></div>
         </div>
         <div class="col-xs-6">
-          PICKED TILES:
+          Picked Tiles:
           <div class="hidden" data-bind="if: pickedTile1, css: { hidden: false }">
-            <span data-bind="visible: pickedTile1, text: pickedTile1().name"></span>
+            <span class="pick-1" data-bind="visible: pickedTile1, text: pickedTile1().name"></span>
           </div>
           <div class="hidden" data-bind="if: pickedTile2, css: { hidden: false }">
-            <span data-bind="visible: pickedTile2, text: pickedTile2().name"></span>
+            <span class="pick-2" data-bind="visible: pickedTile2, text: pickedTile2().name"></span>
           </div>
         </div>
       </div>

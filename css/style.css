@@ -2,7 +2,7 @@
 .container {
   max-width: 768px;
   background-color: #d3d3d3;
-  margin-top: 1em;
+  margin-top: .75em;
   border-radius: 10px;
 }
 
@@ -11,18 +11,30 @@
 .title {
   font: 3em 'Fredoka One', serif;
   text-align: center;
-  margin-top: .2em;
+  margin: .25em;
   color: #1e73b1;
 }
 
 .stats {
   background-color: #ededed;
+  color: #353535;
   margin: 0 1.25em;
   padding: .25em;
-  font: bold 1em Arial, serif;
+  font: bold 1em Verdana, Arial, sans-serif;
   border: 2px solid;
   border-radius: 10px;
-  height: 60px;
+  height: 65px;
+}
+
+.turns-label {
+  margin-top: .3em;
+}
+
+.turns-taken,
+.matches-left,
+.pick-1,
+.pick-2 {
+  color: #1e73b1;
 }
 
 /* Game */
@@ -83,11 +95,11 @@
   }
 
   .stats {
-    font-size: .7em;
+    font-size: .6em;
+    height: 80px;
   }
 
   /* Game */
-
   .duck-row {
     margin: 0;
   }
@@ -104,6 +116,6 @@
 
 @media screen and (max-width: 415px) {
   .tile {
-    height: 85px;
+    height: 75px;
   }
 }
