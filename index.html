@@ -45,14 +45,14 @@
     <script type="text/html" id="tile-template">
       <div class="col-xs-3">
         <div class="tile">
-          <img src="" alt="" class="img-responsive center-block" data-bind="attr: {src: 'img/tile-back.png'},
+          <img src="" alt="" class="img-responsive center-block" data-bind="attr: {src: 'img/dtile-back.png'},
                 visible: !imageVisible() && !matched(), click: $parent.pickTile">
           <img src="" alt="" class="img-responsive center-block hidden" data-bind="attr: {src: image},
                 visible: imageVisible, css: { hidden: false }">
          <!-- The following line is to show the tile's ID # to aid in testing.
               and will be removed before release.
           -->
-         <span data-bind="text: id">
+         <!-- <span data-bind="text: id"> -->
         </div>
       </div>
     </script>
