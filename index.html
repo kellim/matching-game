@@ -20,7 +20,8 @@
       </div>
       <div class="row stats">
         <div class="col-xs-6">
-            MATCHES LEFT: <span data-bind="text: matchesLeft"></span>
+          <div>MATCHES LEFT: <span data-bind="text: matchesLeft"></span></div>
+          <div>TURNS TAKEN: <span data-bind="text: turnsTaken"></span></div>
         </div>
         <div class="col-xs-6">
           PICKED TILES:
@@ -42,8 +43,9 @@
       </div>
     </div>
 
-    <div class="game-over" data-bind="visible: matchesLeft() === 0">
+    <div class="game-over" class="hidden" data-bind="visible: matchesLeft() === 0, css: { hidden: false }">
       <p>You Won!</p>
+      <p>It took you <span data-bind="text: turnsTaken"></span> turns.</p>
       <button class="btn btn-lg btn-primary btn-play-again"  data-bind="click: playAgain">Play Again</button>
     </div>
 

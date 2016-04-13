@@ -93,6 +93,9 @@ var ViewModel = function() {
   // The amount of matches left to find
   this.matchesLeft = ko.observable(this.NUM_TILES);
 
+  // The amount of turns player has taken
+  this.turnsTaken = ko.observable(0);
+
   // Hold the two tiles the player picks each turn
   this.pickedTile1 = ko.observable();
   this.pickedTile2 = ko.observable();
@@ -147,6 +150,7 @@ var ViewModel = function() {
       console.log('pickedTile1: ' + tile.id);
     } else if (tile !== self.pickedTile1() && typeof self.pickedTile2() === 'undefined') {
         self.pickedTile2(tile);
+        self.turnsTaken(self.turnsTaken() + 1);
         self.toggleVisibility(self.pickedTile2());
         console.log('pickedTile2: ' + tile.id);
         if (self.pickedTile1().id === self.pickedTile2().id) {
@@ -214,6 +218,7 @@ var ViewModel = function() {
   // Reset the game. Called when player clicks the "Play Again" button.
   this.playAgain = function() {
     self.matchesLeft(self.NUM_TILES);
+    self.turnsTaken(0);
     self.tileList.removeAll()
     self.initializeGame();
     self.initializeTurn();

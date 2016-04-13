@@ -97,9 +97,9 @@
   }
 
   /* Game Over Window */
-    .game-over {
-      font-size: 1.5em;
-    }
+  .game-over {
+    font-size: 1.5em;
+  }
 }
 
 @media screen and (max-width: 415px) {
