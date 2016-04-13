@@ -1,9 +1,34 @@
-img {
-  border-radius: 10px;
-}
 
 .container {
   max-width: 768px;
+  background-color: #d3d3d3;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+/* Title and Stats */
+
+.title {
+  font: 3em 'Fredoka One', serif;
+  text-align: center;
+  margin-top: .2em;
+  color: #1e73b1;
+}
+
+.stats {
+  background-color: #ededed;
+  margin: 0 1.25em;
+  padding: .25em;
+  font: bold 1em Arial, serif;
+  border: 2px solid;
+  border-radius: 10px;
+  height: 60px;
+}
+
+/* Game */
+
+.duck-row {
+  margin: 0 .25em;
 }
 
 .tile {
@@ -11,19 +36,11 @@ img {
   height: 200px;
 }
 
-.picked-tiles {
-  font-weight: bold;
+.tile-img {
+  border-radius: 5%;
 }
 
-.picked-names {
-  height: 60px;
-  text-align: right;
-}
-
-.matches-left {
-  font-weight: bold;
-}
-
+/* Game Over Window */
 .game-over {
   font-size: 3em;
   color: green;
@@ -55,11 +72,32 @@ img {
 }
 
 @media screen and (max-width: 480px) {
+
+  .container {
+    margin: 1em;
+  }
+
+  /* Title and Stats */
+  .title {
+    font-size: 1.6em;
+  }
+
+  .stats {
+    font-size: .7em;
+  }
+
+  /* Game */
+
+  .duck-row {
+    margin: 0;
+  }
+
   .tile {
     height: 135px;
   }
 
-  .game-over {
-    font-size: 1.5em;
-  }
+  /* Game Over Window */
+    .game-over {
+      font-size: 1.5em;
+    }
 }
