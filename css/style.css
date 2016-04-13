@@ -7,7 +7,6 @@
 }
 
 /* Title and Stats */
-
 .title {
   font: 3em 'Fredoka One', serif;
   text-align: center;
@@ -24,16 +23,12 @@
   border: 2px solid;
   border-radius: 10px;
   height: 65px;
-}
-
-.turns-label {
-  margin-top: .3em;
+  overflow-y: auto;
 }
 
 .turns-taken,
 .matches-left,
-.pick-1,
-.pick-2 {
+.pick {
   color: #1e73b1;
 }
 
@@ -87,6 +82,7 @@
 
   .container {
     margin: 1em;
+    padding-bottom: 1em;
   }
 
   /* Title and Stats */
@@ -96,7 +92,6 @@
 
   .stats {
     font-size: .6em;
-    height: 80px;
   }
 
   /* Game */
