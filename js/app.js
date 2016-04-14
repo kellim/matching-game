@@ -1,5 +1,4 @@
 /* JSON Object to hold data for tiles to be used */
-
 var ducks = [
   {
     'id': 1,
@@ -71,7 +70,7 @@ var ducks = [
     'name': 'Wood Duck' ,
     'image': 'img/wood_duck2_150x150.jpg'
   }
-]
+];
 
 var Tile = function(data) {
   this.id = data.id;
@@ -79,10 +78,11 @@ var Tile = function(data) {
   this.image = ko.observable(data.image);
   this.matched = ko.observable(false);
   this.imageVisible = ko.observable(false);
-}
+};
 
 var ViewModel = function() {
   var self = this;
+
   // Array to hold tile objects
   this.tileList = ko.observableArray([]);
 
@@ -106,7 +106,7 @@ var ViewModel = function() {
     tiles.forEach(function(tileItem) {
       self.tileList.push(new Tile(tileItem));
     });
-}
+};
 
   // Add/instantiate matching tiles for the tiles that will be used
   // in a game.
@@ -118,26 +118,26 @@ var ViewModel = function() {
         self.tileList.push(new Tile(tileItem));
       }
     });
-  }
+  };
 
   // Shuffle tiles in tileList array
   this.shuffleTiles = function() {
    self.tileList(_.shuffle(self.tileList()));
-  }
+  };
 
   // Remove extra tiles that are not needed since you
   // should have no more than self.NUM_TILES tiles to play a
   // game. Intended to be called after shuffleTiles() so
   // if there are more than self.NUM_TILES tiles, the tiles
-  // you plan the game with each time can vary.
+  // you play the game with each time can vary.
   this.removeExtraTiles = function() {
     self.tileList.splice(self.NUM_TILES);
-  }
+  };
 
   // Toggles tile visibility
   this.toggleVisibility = function(tile) {
     tile.imageVisible(!tile.imageVisible());
-  }
+  };
 
   // This function is called when the player clicks on a tile. It determines
   // if the player is selecting the first or second tile. At the appropriate time,
@@ -147,25 +147,17 @@ var ViewModel = function() {
      if(typeof self.pickedTile1() === 'undefined') {
       self.pickedTile1(tile);
       self.toggleVisibility(self.pickedTile1());
-      console.log('pickedTile1: ' + tile.id);
     } else if (tile !== self.pickedTile1() && typeof self.pickedTile2() === 'undefined') {
         self.pickedTile2(tile);
         self.turnsTaken(self.turnsTaken() + 1);
         self.toggleVisibility(self.pickedTile2());
-        console.log('pickedTile2: ' + tile.id);
         if (self.pickedTile1().id === self.pickedTile2().id) {
-          console.log('ids match: ' + self.pickedTile1().id, self.pickedTile2().id);
           self.matchFound();
         } else {
-          console.log('ids do not match: ' + self.pickedTile1().id, self.pickedTile2().id)
           self.noMatchFound();
         }
-    } else {
-      console.log('Invalid tile selection');
     }
-    // console.log('pickTile' + tile);
-    console.log('result: ' + self.pickedTile1(), self.pickedTile2());
-  }
+  };
 
   // This function is called by pickTile() if player selected two matching tiles.
   // It shows the tiles for 1.5 seconds and the turn is over. It calls initializeTurn()
@@ -181,11 +173,10 @@ var ViewModel = function() {
       self.toggleVisibility(self.pickedTile2());
       self.initializeTurn();
     }, 1500);
-
-  }
+  };
 
   // This function is called by pickTile() if player selected two tiles that do not match.
-  // The tiles will be visible for 2 seconds and then "turned over" which hides the image.
+  // The tiles will be visible for 2.2 seconds and then "turned over" which hides the image.
   this.noMatchFound = function() {
     console.log('no match found');
     setTimeout(function(){
@@ -194,13 +185,13 @@ var ViewModel = function() {
       self.initializeTurn();
     }, 2200);
 
-  }
+  };
 
   // Called by matchFound() or noMatchFound() to reset variables for the next turn.
   this.initializeTurn = function() {
     self.pickedTile1(undefined);
     self.pickedTile2(undefined);
-  }
+  };
 
   // Initialize Game. First, instantiate tiles, then shuffle tiles before removing extra
   // tiles if the are more tiles intantiated than self.NUM_TILES. Add matching tiles for
@@ -214,7 +205,8 @@ var ViewModel = function() {
     self.addMatchingTiles(ducks);
     self.shuffleTiles();
     console.log(self.tileList().length, self.tileList());
-  }
+  };
+
   // Reset the game. Called when player clicks the "Play Again" button.
   this.playAgain = function() {
     self.matchesLeft(self.NUM_TILES);
@@ -222,8 +214,9 @@ var ViewModel = function() {
     self.tileList.removeAll()
     self.initializeGame();
     self.initializeTurn();
-  }
+  };
 
   self.initializeGame();
-}
+};
+
 ko.applyBindings(new ViewModel());
