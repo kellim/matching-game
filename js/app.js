@@ -78,6 +78,16 @@ var Tile = function(data) {
   this.image = ko.observable(data.image);
   this.matched = ko.observable(false);
   this.imageVisible = ko.observable(false);
+
+  // Determine if you show the tile image side or the back of tile
+  this.imageUrl = ko.computed(function() {
+    console.log('image visible: ' + this.imageVisible());
+    if (this.imageVisible()) {
+      return this.image;
+    } else {
+      return 'img/dtile-back.png';
+    }
+  }, this);
 };
 
 var ViewModel = function() {
@@ -163,12 +173,10 @@ var ViewModel = function() {
   // It shows the tiles for 1.5 seconds and the turn is over. It calls initializeTurn()
   // to start the next turn.
   this.matchFound = function() {
-    console.log('match found');
+    setTimeout(function(){
     self.pickedTile1().matched(true);
     self.pickedTile2().matched(true);
     self.matchesLeft(self.matchesLeft() - 1);
-    console.log(self.matchesLeft());
-    setTimeout(function(){
       self.toggleVisibility(self.pickedTile1());
       self.toggleVisibility(self.pickedTile2());
       self.initializeTurn();
@@ -211,7 +219,7 @@ var ViewModel = function() {
   this.playAgain = function() {
     self.matchesLeft(self.NUM_TILES);
     self.turnsTaken(0);
-    self.tileList.removeAll()
+    self.tileList.removeAll();
     self.initializeGame();
     self.initializeTurn();
   };

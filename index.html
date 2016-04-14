@@ -52,10 +52,8 @@
     <script type="text/html" id="tile-template">
       <div class="col-xs-3">
         <div class="tile">
-          <img src="" alt="" class="img-responsive center-block tile-img" data-bind="attr: {src: 'img/dtile-back.png'},
-                visible: !imageVisible() && !matched(), click: $parent.pickTile">
-          <img src="" alt="" class="img-responsive center-block hidden tile-img" data-bind="attr: {src: image},
-                visible: imageVisible, css: { hidden: false }">
+          <img src="" alt="tile" class="img-responsive center-block tile-img"
+            data-bind="attr: { src: imageUrl() }, style: { visibility: !matched() ? 'visible' : 'hidden' }, click: $parent.pickTile">
         </div>
       </div>
     </script>

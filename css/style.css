@@ -1,9 +1,16 @@
+html,
+body,
+.col-xs-3 {
+  height: 100%;
+}
 
 .container {
   max-width: 768px;
   background-color: #d3d3d3;
-  margin-top: .75em;
+  margin: 1em auto;
+  padding: 0 0 1.25em 0;
   border-radius: 10px;
+  height: 97%;
 }
 
 /* Title and Stats */
@@ -22,8 +29,7 @@
   font: bold 1em Verdana, Arial, sans-serif;
   border: 2px solid;
   border-radius: 10px;
-  height: 65px;
-  overflow-y: auto;
+  min-height: 4.5em;
 }
 
 .turns-taken,
@@ -35,14 +41,17 @@
 /* Game */
 .duck-row {
   margin: 0 .25em;
+  height: 21%;
 }
 
 .tile {
+  height: 100%;
+
   padding: 1.3em 0;
-  height: 200px;
 }
 
 .tile-img {
+  max-height: 100%;
   border-radius: 5%;
 }
 
@@ -91,6 +100,7 @@
 
   .stats {
     font-size: .6em;
+    min-height: 8em;
   }
 
   /* Game */
@@ -98,18 +108,8 @@
     margin: 0;
   }
 
-  .tile {
-    height: 135px;
-  }
-
   /* Game Over Window */
   .game-over {
     font-size: 1.5em;
-  }
-}
-
-@media screen and (max-width: 415px) {
-  .tile {
-    height: 75px;
   }
 }
