@@ -1,31 +1,20 @@
-# matching-game
-Responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout
+# Duck Matching Game
+This is a responsive matching game using JQuery / JavaScript, Bootstrap, and Knockout. 
 
-# Tasks To Do
-- <del>Add backs for tiles and display backs of tiles initially</del>
-- <del>Start a new turn</del>
-  - <del>Let player pick first tile</del>
-  - <del>Display image of tile picked in place of back of tile</del>
-  - <del>Write name of first tile picked to screen</del>
-  - <del>Let player pick second tile</del>
-  - <del>Display image of second tile picked in place of back of tile</del>
-  - <del>Write name of second tile picked to screen</del>
-- <del>Compare first and second tiles picked to see if they match</del>
-  - <del>If no match found</del>
-    - <del>Indicate no match found</del>
-    - <del>Turn cards back over by showing back of tile instead of tile image</del>
-    - <del>Let player start a new turn</del>
-- <del>If match found</del>
-    - <del>Indicate match found</del>
-    - <del>Do not display tiles or backs of tiles at location where match was found</del>
-    - <del>Let player start a new turn</del>   
-- <del>Display 'Number of Matches Found' on screen (or matches left to find?)</del>
-- End Game when all Matches found
-  - <del>Display a congratulatory message when game has been won</del>
-  - Invite user to play a new game
-    - If player chooses to play new game, initiate the game so it starts over
-- Add header with title to page
-- Future enhancements include allowing user to select the type of image to match (add something besides ducks), also let user select their own images and use local storage to hold them.
+I created this to get more experience with Knockout and Bootstrap.
+
+# How to Play
+Download and extract the zip file for this repo, and then open index.html
+
+Your goal is to pick 2 tiles that match on each turn. If you pick tiles that match, then they disappear and you need to find all the other matches. Try to find all the matches in the least amount of turns possible.
+
+# Future Enhancements
+Below are some ideas for future enhancements, though I may end up recreating the game without Knockout. When you use Knockout's data-binds to change the image displayed or hide it, then there is no real way to do animation for a card flipping over.
+
+Future enhancements include:
+- Allow user to select the type of image to match (add something besides ducks)
+- Save how many turns the player took to local storage and show them what their record was (how many turns it took them to win a game) and also what the score was in their previous game.
+- Let user select their own images and use local storage to hold them.
 
 # Resources
 - [Knockout Documentation](http://knockoutjs.com)
