@@ -21,4 +21,4 @@ Future enhancements include:
 - [Bootstrap Documentation](http://getbootstrap.com)
 - [jQuery Documentation](http://api.jquery.com)
 - [Underscore Documentation](http://underscorejs.org)
-- [U.S. Fish and Wildlife Service](http://digitalmedia.fws.gov/) - all duck images for this game are public domain and were obtained from this site.
+- [U.S. Fish and Wildlife Service](http://digitalmedia.fws.gov/) - all duck images for this game are public domain and were obtained from this site. The exception is the back of the tile with the duck silhouette, which I created using Inkscape.
