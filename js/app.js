@@ -69,6 +69,11 @@ var ducks = [
     'id': 14,
     'name': 'Wood Duck' ,
     'image': 'img/wood_duck2_150x150.jpg'
+  },
+    {
+    'id': 15,
+    'name': 'Long-tailed Duck' ,
+    'image': 'img/long-tailed-duck150x150.jpg'
   }
 ];
 
