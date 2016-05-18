@@ -86,7 +86,6 @@ var Tile = function(data) {
 
   // Determine if you show the tile image side or the back of tile
   this.imageUrl = ko.computed(function() {
-    console.log('image visible: ' + this.imageVisible());
     if (this.imageVisible()) {
       return this.image;
     } else {
@@ -127,7 +126,6 @@ var ViewModel = function() {
   // in a game.
   this.addMatchingTiles = function(tiles) {
     var validTileIds = _.pluck(self.tileList(), 'id');
-    console.log(validTileIds);
     tiles.forEach(function(tileItem) {
       if (_.contains((validTileIds), tileItem.id)) {
         self.tileList.push(new Tile(tileItem));
@@ -191,7 +189,6 @@ var ViewModel = function() {
   // This function is called by pickTile() if player selected two tiles that do not match.
   // The tiles will be visible for 2.2 seconds and then "turned over" which hides the image.
   this.noMatchFound = function() {
-    console.log('no match found');
     setTimeout(function(){
       self.toggleVisibility(self.pickedTile1());
       self.toggleVisibility(self.pickedTile2());
@@ -217,7 +214,6 @@ var ViewModel = function() {
     }
     self.addMatchingTiles(ducks);
     self.shuffleTiles();
-    console.log(self.tileList().length, self.tileList());
   };
 
   // Reset the game. Called when player clicks the "Play Again" button.
