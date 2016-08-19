@@ -4,7 +4,7 @@ This is a responsive matching game using JQuery / JavaScript, Bootstrap, and Kno
 I created this to get more experience with Knockout and Bootstrap.
 
 # How to Play
-You can play the game online at https://kellimb.github.io/matching-game or download and extract the zip file for this repo, and then open index.html to play.
+You can play the game online at https://kellim.github.io/matching-game or download and extract the zip file for this repo, and then open index.html to play.
 
 Your goal is to pick 2 tiles that match on each turn. If you pick tiles that match, then they disappear and you need to find all the other matches. Try to find all the matches in the least amount of turns possible.
 
