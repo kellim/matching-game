@@ -32,6 +32,6 @@ The code in this project is licensed under the MIT License. See [LICENSE](https:
 
 The image `dtile-back.png` in the `img` folder was created by me and it's license is [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-The images files with photos of ducks are from the [U.S. Fish and Wildlife Service](http://digitalmedia.fws.gov/) and as far as I know are public domain, but it is up to you to follow their guidelines - see <https://digitalmedia.fws.gov/digital/about>.
+The image files with photos of ducks are from the [U.S. Fish and Wildlife Service](http://digitalmedia.fws.gov/) and as far as I know are public domain, but it is up to you to follow their guidelines - see <https://digitalmedia.fws.gov/digital/about>.
 
 
